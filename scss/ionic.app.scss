@@ -1,0 +1,721 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+$balanced:                        #785ba7;
+$iconText:						  #adadad;
+$positive:						  #2c92c9;
+// #37BC61
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+/* Empty. Add your own CSS if you like */
+.space-top {
+	position:absolute;
+
+	top: 15%;
+	width: 100%;
+}
+video {
+	width:100%;
+	height:auto;
+}
+
+.bc {
+	height: 200px;
+	width: 100%;
+	padding:0;
+	margin:0;
+	color: #888888;
+}
+.bc h3 {
+	color: #888888;
+}
+
+.avatar {
+	height: 150px;
+	margin-top: 10%;
+	// background-color: teal;
+	margin:0 auto;
+	padding-left: 2%;
+	margin-top:5%;
+}
+
+
+.bc .avatarContainer {
+	text-align: center;
+}
+.bc .avatarContainer img {
+	width:150px;
+	height: auto;
+	border-radius: 100px;
+	// border-style: solid;
+	// border-width: 7px;
+	border-color: $balanced;
+}
+
+.otherContainer {
+	float:left;
+	margin-top: 15%;
+	// background-color: red;
+	padding-left: 2%;
+}
+
+.otherContainer span{
+	font-size: 20px;
+	padding-bottom: 10px;
+	color: $balanced;
+}
+
+
+.survivorsLogo {
+	height: 135px;
+	width: auto;
+}
+
+.white {
+	color:white;
+}
+.profilePage .col.left {
+	border-style: solid;
+	border-right: 1px solid #dbdbdb;
+}
+.profilePage .col.right {
+	border-style: solid;
+	border-left: 1px solid #dbdbdb;
+}
+
+.row.profilePage {
+	padding: 0px !important;
+	margin: 0px;
+}
+.col p {
+	color: #888888;
+}
+.col h3 {
+	color:teal;
+	line-height: 2px;
+}
+
+.title {
+	font-size: 20px;
+	color: $balanced;
+	font-weight: 500;
+}
+.subtitle {
+	color: #444444;
+	font-weight: lighter;
+	line-height: 0.2;
+	font-size:14px;
+}
+
+
+.addConnection {
+	background-color: $balanced;
+	border: none;
+	height:25px;
+	min-width: 100px;
+	border-radius: 20px;
+}
+.addConnection i {
+	color:white;
+	font-size: 30px;
+	position:relative;
+	top:-10px;
+	left: -11px;
+}
+
+.buttonText {
+	color:white;
+	position:relative;
+	color:white !important ;
+	font-size:100% !important;
+	top: -17px;
+}
+
+.imageContainer {
+	min-height: 150px;
+	height: auto;
+	min-width: 100px;
+	width: 100%;
+}
+
+.image-loader-container {
+	width: 100%;
+	max-height: 200px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-color: #e5e5e5;
+	display: flex;
+	  flex-direction: row;
+	  flex-wrap: nowrap;
+	  justify-content: center;
+	  align-content: stretch;
+	  align-items: center;
+	  overflow: hidden;
+}
+.image-loader{
+	margin: 150px;
+}
+
+.videoContainer {
+	height: 100%;
+	width: 100%;
+}
+
+
+
+
+.AddConnectionDisabled, .AddConnectionDisabledConnected {
+	background-color: #d3d3d3;
+}
+
+.AddConnectionDisabledAccept {
+	background-color: #79CDCD;
+}
+.connectedText {
+	color: grey !important;
+}
+
+.list.card {
+	width:100%;
+	min-height: 300px;
+	border-style: solid;
+    border-bottom: thick solid #dbdbdb;
+}
+.card {
+	margin: 0px;
+	box-shadow: none;
+}
+
+.full-video-image {
+	width: 100%;
+	min-height: 350px;
+	height: auto;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+.PlayIcon {
+	position: absolute;
+	top: 35%;
+	left: 45%;
+	font-size: 100px;
+	opacity: 0.5;
+	color:white;
+}
+@media (max-width: 320px)
+{
+	.otherContainer span {
+		font-size: 20px;
+	}
+
+	.item.notifications {
+		font-size: 90%;
+	}
+
+	.new_topic_content textarea, .new_topic_content .topic_body{
+		height: 120px !important;
+	}
+
+}
+
+
+@media (min-width: 768px) {
+  	.full-video-image {
+  		height: 600px;
+  	}
+  	.videoContainer .image-loader-container {
+  		height: 600px !important;
+  	}
+
+  	.image-loader-container {
+  		min-height: 500px !important;
+  	}
+  	.imageContainer {
+  		min-height: 500px !important;
+  		height: auto;
+  	}
+
+  	.row.topics .col {
+		height: 200px !important;
+	}
+
+	.otherContainer {
+		margin-top:6%;
+	}
+
+	.otherContainer span {
+		font-size: 30px;
+		padding-bottom: 10px;
+	}
+
+	.PlayIcon{
+		top: 40%;
+	}
+
+}
+.videoContainer .image-loader-container{
+	width: 100%;
+	max-height: 350px;
+	height: 100%;
+}
+.video {
+	width: 100%;
+	height: auto;
+	background-color: black;
+}
+
+.full-image {
+	width: 100%;
+	position: relative;
+	top:0px;
+}
+
+.item.item-body {
+	border-style: none;
+	padding-top: 0px !important;
+}
+.item.item-body.bodytext{
+	// border-style: solid;
+	// border-width: 1px;
+	padding: none;
+}
+.item.item-body.bodytext h1{
+	margin-top:0px !important;
+}
+
+.item {
+	border-style: solid;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 0px none transparent;
+}
+.item.item-image-video {
+	padding:0px;
+	margin:0px;
+	width: 100%;
+}
+
+.comments{
+	color: $iconText;
+	text-align: center;
+	font-size: 20px;
+}
+.comments-text {
+	display: inline-block;
+	color: $iconText;
+}
+.item.row .col {
+	text-align: center;
+}
+
+.newTab.tab-item {
+	background-color: $balanced !important;
+}
+.newTab.tab-item .icon{
+	border-top: 0px none transparent !important;
+}
+.newTab.tab-item.tab-item-active .icon{
+	line-height: 48px !important;
+}
+.bar-header {
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}
+
+.tab-item.tab-item-active .icon{
+	border-top: 3px solid $balanced;
+	line-height: 43px !important;
+}
+.tab-item.tab-item-active{
+	background-color: #2a2a2a;
+}
+
+.md-scroll-mask { position: initial;}
+
+.topic_tags a{
+	color: #2c92c9;
+	text-decoration: none;
+}
+
+.inspired i, .inspired span{
+	color: #2c92c9 !important;
+}
+
+.comments_user_avatar {
+	height:50px;
+	width:50px;
+	border-radius: 30px;
+	float:left;
+	padding: 4px;
+}
+.comments_user span{
+	position: relative;
+	color: #2c92c9;
+}
+
+.list.comments_list{
+	margin-bottom: 0px !important;
+}
+.list.comments_list span{
+	color: #2c92c9;
+}
+.list.comments_list img {
+
+	outline-width: 3px;
+	outline-style: solid;
+	outline-color: white;
+	position: relative;
+	top: -2px;
+	z-index: -1;
+}
+.item.item-text-wrap{
+	margin-top:20px;
+}
+.list.comments_list p, .item.item-text-wrap p{
+	padding-bottom:10px;
+	padding-top: 3px;
+	z-index: 100;
+}
+.list.comments_list .item, .item.item-text-wrap{
+	padding: 0px !important;
+	padding-left: 16px !important;
+	padding-right: 16px !important;
+	min-height: 50px;
+}
+
+
+.add_comment .item.item-input{
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	padding-right: 0px !important;
+}
+
+.item.item-input .comment_textarea {
+	height: auto !important;
+	min-height: 50px;
+}
+
+.button_submit_comment {
+	padding: 0px !important;
+	margin: 0px !important;
+	font-size: 30px;
+	z-index: 100;
+}
+
+.col_button, .add_comment .col-75, .row.add_comment, .add_comment  {
+	padding: 0px !important;
+	margin: 0px !important;
+
+}
+.row.add_comment label {
+	border: 0px none transparent;
+}
+
+.comment_time {
+	float:right; 
+	padding-left: 10px;
+	font-size: 14px;
+	color: #999999 !important;
+}
+
+.item .tags {
+	text-decoration: none;
+}
+
+.row.topics {
+	padding: 0px;
+	margin-top: 10px;
+}
+.row.topics .col {
+	border: 1px solid white;
+	padding: 0px;
+	height: 100px;
+}
+.list.addcomment {
+	border-style:solid;
+	border-top: 1px solid #dbdbdb;
+	margin-top: 5px;
+}
+.row-wrap {
+  flex-wrap: wrap;
+}
+.list.card.check_topic{
+	color:blue !important;
+	border-bottom: 0px none transparent;
+	margin-bottom: 0px !important;
+}
+
+.text_topic {
+	height: 100%;
+	width:100%;
+	background-color: #ebebeb;
+}
+
+.text_topic {
+	font-size: 70px;
+	text-align: center;
+	padding-top: 15%;
+	color: #bdbdbd;
+}
+
+.searchBy {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+.searchBy .left {
+	border-style: solid;
+	border-right: 1px solid #dbdbdb;
+}
+.row.row-wrap.categories.topics {
+	margin-top: 0px !important;
+}
+
+.HomeNotifications {
+	width:100%; height: 40px; 
+	border-bottom:1px 
+	solid #dbdbdb; 
+	text-align:center;  
+	color: white; 
+	display:none; 
+	background-color: #a6d3ff;
+}
+
+.buttonInMiddle {
+  margin-top: 60%;
+  margin-bottom: 0px;
+}
+
+.buttonInMiddle i {	
+	font-size: 30px;
+	position: relative;
+	top: 5px;
+}
+
+.buttonInMiddle a {
+	text-decoration: none;
+}
+
+.buttonInMiddle h3 {
+	color:white;
+}
+
+.buttonInMiddle .button {
+	background-color: transparent !important;
+	border:1px solid white;
+	color:white;
+	height: 70px;
+}
+
+.buttonInMiddle .button-submit {
+	height: 40px;
+}
+
+.loginContent {
+	background-color: $balanced;
+}
+
+.loginChoice {
+	color: white !important;
+}
+
+.logoImageContainer{
+	height: 131.91px;
+	width: 155px;
+	margin: 0 auto;
+}
+
+.space-top h2 {
+	margin-top: 0px;
+	color:white;
+	font-family:verdana;
+	font-family: 'Oswald', sans-serif;
+	font-size: 300%;
+}
+
+.item.item-input.login {
+	background-color: transparent;
+	border:0px none transparent;
+	border-bottom: 1px solid white;
+}
+
+.item.item-input.login input, .item.item-input.login span {
+	color: white;
+}
+
+.cancelCreatePassword {
+	color:white;
+}
+
+.bar-subheader.new_topic .button{
+	color: $light;
+}
+
+.picture {
+	height: 90px !important;
+	width: auto !important;
+}
+
+.button.new_topic_button{
+	border-radius: 50px !important;
+	height: 100px;
+	width: 100px;
+}
+
+.new_topic_content .input-label, 
+.new_topic_content input, 
+.new_topic_content textarea,
+.new_topic_content select {
+	color: #999999 !important;
+}
+
+.new_topic_content .topic_body {
+	border-color: transparent;
+	border-style: none;
+	border-width: 0px;
+}
+
+.new_topic_content textarea, .new_topic_content .topic_body{
+	height: 180px;
+}
+
+.new_topic_content .item {
+	border:0px none transparent !important; 
+}
+
+.line_input_label {
+	height: 1px;
+	width: 90%;
+	background-color: #dbdbdb;
+	margin: 0 auto;
+	padding-top:2px;
+}
+
+.line_input_label.body {
+	height: 1px;
+	width: 90%;
+	background-color: #dbdbdb;
+	margin: 0 auto;
+	padding-top: 0px;
+}
+
+.tags {
+	border: 0px none transparent !important;
+	box-shadow: none !important;
+}
+
+
+
+
+// ----------------------------------tags----------------------------------
+.bootstrap .tags {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.bootstrap .tags.focused {
+  border-color: #66afe9;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
+}
+
+.bootstrap .tags .tag-item {
+  background: #bdbdbd;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.bootstrap .tags .tag-item.selected {
+  background: #d9534f;
+  border: 1px solid #d43f3a;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.bootstrap .tags .tag-item button {
+  background: transparent;
+  color: #000;
+  opacity: .4;
+}
+
+.bootstrap .autocomplete {
+  border-radius: 4px;
+}
+
+.bootstrap .autocomplete .suggestion-item.selected {
+  color: #262626;
+  background-color: #e9e9e9;
+}
+
+.bootstrap .autocomplete .suggestion-item em {
+  font-weight: normal;
+  background-color: #ffff00;
+}
+
+.bootstrap .autocomplete .suggestion-item.selected em {
+  color: #262626;
+  background-color: #ffff00;
+}
+
+
+
+.first_image_container {
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+}
+.first_image_container img{
+	border-radius: 50px;
+	height: 100px;
+	width: auto;
+}
+
+.first_title h3{
+	color: white;
+}
+
+.relogin_content {
+	position:absolute;
+
+	top: 25%;
+	width: 100%;
+}
+
+.bc.update-profile h3{
+	padding-left: 10px;
+}
+
+.report-icon {
+	color: #999999;
+	font-size: 30px;
+	position:absolute; 
+	left:95%;
+}
+
+.popup {
+	border-radius: 8px !important;
+}

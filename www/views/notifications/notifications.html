@@ -1,0 +1,13 @@
+<ion-view view-title="Notifications">
+	<ion-content>
+		<ul class="list">
+		    <li class="item notifications" ng-repeat="n in notifications track by $index">
+		      <span ng-show="n.type == 'new_comment'" ui-sref="tab.comments({id: n.topic_id})">{{ n.userCommenter }} has posted a new comment</span>
+		      <span ng-show="n.type == 'user_inspired'" ui-sref="tab.tag_category_topic({id: n.topic_id})">{{ n.inspiredUser }} is inspired by your post</span>
+		      <span ng-show="n.type == 'new_connection'" ui-sref="tab.comments_user({name: n.newConnection})">{{ n.newConnection }} wants to be your connection</span>
+		      <span ng-show="n.type == 'user_accepted_connection'" ui-sref="tab.comments_user({name: n.AcceptingUser})">{{ n.AcceptingUser }} is now your connection</span>
+		      <span ng-show="n.type == 'connections_newpost'" ui-sref="tab.tag_category_topic({id: n.topic_id})">{{ n.connectionPosting }} posted a new topic</span>
+		    </li>
+		</ul>
+	</ion-content>
+</ion-view>

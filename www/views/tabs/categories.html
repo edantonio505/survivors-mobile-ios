@@ -1,0 +1,13 @@
+<ion-view view-title="#{{ tag_title }}">
+	<ion-content>
+		<div class="row row-wrap categories topics">
+			<div  class="col col-25" ng-repeat="topic in topics" ng-click="checkTopic(topic.id)">
+				<div class="text_topic" ng-show="topic.pic_thumbnail == '' && topic.video == ''">
+					<i class="ion-android-list"></i>
+				</div>
+				<div ng-show="topic.pic_thumbnail != ''" image-lazy-src="{{ topic.pic_thumbnail }}" image-lazy-background-image="true" style="height: 100%; width: 100%; background-size: cover;"></div>
+				<div ng-show="topic.video_thumbnail != ''" image-lazy-src="{{ topic.video_thumbnail }}" image-lazy-background-image="true" style="height: 100%; width: 100%; background-size: cover;"></div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

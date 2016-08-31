@@ -1,0 +1,38 @@
+<ion-view view-title="Profile" cache-view="true">
+	<ion-content lazy-scroll overflow-scroll='true'>
+		<div class="bc">
+			<div class="avatar row">
+				<div class="avatarContainer col col-50">
+					<img src="{{ user.avatar }}">
+				</div>
+				<div class="otherContainer col col-50">
+					<span>{{ user.name }}</span><br />
+				</div>
+			</div>
+		</div>
+		<div class="row profilePage">
+			<div class="col left">
+				<p class="text-center">Topics</p>
+				<h3 class="text-center">{{ topics_count }}</h3>
+			</div>
+			<div class="col">
+				<p class="text-center">Connections</p>
+				<h3 class="text-center">{{ connections_count }}</h3>
+			</div>
+			<div class="col right">
+				<p class="text-center">Inspired</p>
+				<h3 class="text-center">{{ inspired_count }}</h3>
+			</div>
+		</div>
+
+		<div class="row row-wrap topics">
+			<div  class="col col-25" ng-repeat="topic in user.topics" ng-click="checkTopic(topic.id)">
+				<div class="text_topic" ng-show="topic.pic_thumbnail == '' && topic.video == ''">
+					<i class="ion-android-list"></i>
+				</div>
+				<div ng-show="topic.pic_thumbnail != ''" image-lazy-src="{{ topic.pic_thumbnail }}" image-lazy-background-image="true" style="height: 100%; width: 100%; background-size: cover;"></div>
+				<div ng-show="topic.video_thumbnail != ''" image-lazy-src="{{ topic.video_thumbnail }}" image-lazy-background-image="true" style="height: 100%; width: 100%; background-size: cover;"></div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

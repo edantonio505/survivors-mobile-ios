@@ -1,0 +1,64 @@
+<ion-view view-title="New Topic" cache-view="false">
+	
+	<div class="bar bar-subheader bar-dark new_topic">
+		<div class="button-bar">
+		  <a class="button button-icon icon ion-camera" ng-click="takePicture(1)"></a>
+		  <a class="button button-icon icon ion-image" ng-click="takePicture(0)"></a>
+		  <a class="button button-icon icon ion-ios-videocam" ng-click="captureVideo()"></a>
+		</div>
+	</div>
+	<ion-content class="has-subheader new_topic_content">
+		
+			<label class="item item-input item-select">
+			    <div class="input-label">
+			      Topic category
+			    </div>
+			    <select id="topic_title" ng-model="topic_title">
+			      <option ng-repeat="post in posts">{{ post.topic_title }}</option>
+			    </select>
+			</label>
+
+
+			<div class="line_input_label"></div>
+			<tags-input ng-model="tags" min-length="1" class="bootstrap" add-on-space="true">
+				<auto-complete min-length="1" source="loadItems($query)" highlight-matched-text="false" select-first-match="true"></auto-complete>
+			</tags-input>
+
+
+			<div class="line_input_label"></div>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Topic title</span>
+				<input id="title" ng-model="title" type="text">
+			</label>
+
+
+
+			<div class="line_input_label body"></div>
+			<div class="row">
+				<div class="col" ng-show="hasFile">
+					<img src="img/thumbnail.png" ng-show="video != ''" ng-hide="playingVideo" class="picture" id="thumbnail" ng-click="playVideo()">
+					<cordova-video class="picture" ng-show="playingVideo" src="video" type="videoType"></cordova-video>
+					<img class="picture" ng-show="picture != undefined" id="myImage" src="{{ picture }}" />
+				</div>
+				<div class="col" ng-class="{'col-67': hasFile}">
+					<label class="item item-input item-stacked-label topic_body">
+						<span class="input-label">Body</span>
+						<textarea id="body" ng-model="body"></textarea>
+					</label>
+				</div>
+			</div>
+		
+			
+			
+
+			<div class="row text-center new_button_container">
+				<div class="col">
+					<button class="button icon button icon ion-checkmark-round button-balanced button-outline new_topic_button" ng-disabled="!title || !body || !topic_title" ng-click="submit(title, body, tags, topic_title)"></button>
+				</div>
+				<div class="col">
+					<button class="button icon ion-close-round button-outline button-assertive new_topic_button" ng-click="cancel()"></button>
+				</div>
+			</div>
+		
+	</ion-content>
+</ion-view>

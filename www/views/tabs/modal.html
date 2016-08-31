@@ -1,0 +1,30 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-balanced">
+      <h1 class="title">Search</h1>
+      <button class="button icon ion-close-round" ng-click="closeModal()"></button>
+    </ion-header-bar>
+    <div class="bar item-input-inset bar-subheader">
+	  <label class="item-input-wrapper">
+	    <i class="icon ion-ios-search placeholder-icon"></i>
+	    <input type="search" id="searchText" ng-model="searchText" placeholder="Search">
+	  </label>
+	</div>
+	
+	<ion-content class="has-subheader">
+		<ul class="list">
+			<li class="item searchBy">
+		      <div class="row ">
+		      	<div class="col left" ng-click="byName()">
+		      		by username
+		      	</div>
+		      	<div class="col" ng-click="byTag()">
+		      		by tag
+		      	</div>		      	
+		      </div>
+		    </li>
+		    <li class="item" ng-repeat="r in rs | filter:searchText" ng-click="goToCategories(r.name, searchBy)">
+		      <span ng-show="searchBy == 'tag'">#</span>{{ r.name }}
+		    </li>
+		</ul>
+    </ion-content>
+</ion-modal-view>

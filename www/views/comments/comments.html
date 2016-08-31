@@ -1,0 +1,39 @@
+<ion-view view-title="Comments" cache-view="true">
+	<ion-content>
+		<div class="card">
+		  	<div class="item item-text-wrap">
+		  		<h3 class="comments_user">
+		  			<img ui-sref="tab.user_profile({ topicId: topic.id })" class="comments_user_avatar" ng-src="{{ user_avatar }}">
+		  			<span ui-sref="tab.user_profile({ topicId: topic.id })">{{ user }}</span>
+		  			<p style="float:right;">{{ created_time }}</p>
+		  		</h3>
+		   		<p>{{ body }}</p>
+		   		<a href="#/tab/tag_category/{{ tag.name }}" class="tags" ng-repeat="tag in tags">#{{ tag.name }}&nbsp;</a>
+		  	</div>
+		</div>
+		<div class="list comments_list" ng-repeat="comment in comments">
+		  	<div class="item item-text-wrap">
+		  	<span class="comment_time">{{ comment.created_time }}</span>
+		  	<p class="comments_user"><span ui-sref="tab.comments_user({name: comment.user_name})"><img class="comments_user_avatar" ng-src="{{ comment.user_avatar }}">{{ comment.user_name }}</span>
+	   			{{ comment.body }}</p>
+			</div>
+		</div>
+		<div class="list addcomment">
+		  
+		    <div class="row add_comment">
+		    	<div class="col col-75">
+			    	<label class="item item-input">
+			    		<textarea class="comment_textarea newComment" ng-model="newComment" placeholder="Add a Comment"></textarea>
+			    	</label>
+		    	</div>
+		    	  
+		    	<div class="col col_button">
+		    		<button ng-disabled="!newComment" ng-click="submitComment(newComment)" class="button button-full button-positive button_submit_comment">
+		    			<i class="comments-icon ion-paper-airplane"></i>
+		    		</button>
+		    	</div>
+		    </div>
+		
+		</div>
+	</ion-content>
+</ion-view>

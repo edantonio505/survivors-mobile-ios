@@ -1,0 +1,16 @@
+<ion-view view-title="Update Your Profile" cache-view="true" hide-back-button="false">
+	<ion-content class="padding">
+		<div class="bc update-profile">
+			<div class="avatar row">
+				<div class="avatarContainer col col-50">
+					<img src="{{ useravatar }}">
+				</div>
+				<div class="otherContainer col col-50">
+					<h3>{{ username }}</h3>
+				</div>
+			</div>
+		</div>
+		<button class="button button-block button-outline button-balanced" ng-click="newUsername()">New username</button>
+		<button class="button button-block button-outline button-balanced" ng-click="newProfilePic()">New profile picture</button>
+	</ion-content>
+</ion-view>

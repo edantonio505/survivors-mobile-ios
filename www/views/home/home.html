@@ -1,0 +1,62 @@
+<ion-view view-title="Home" hide-back-button="true" cache-view="true">
+  <ion-content lazy-scroll overflow-scroll='true'>
+  	<div id="newPostNotification" class="HomeNotifications">
+  		New Topics<br >
+  		<span style="font-size: 13px;">Pull to refresh</span>
+  	</div>
+  	<ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()"></ion-refresher>
+    <div ng-repeat="topic in topics track by topic.id" class="list card">
+
+	  <div class="item item-avatar" ui-sref="tab.user_profile({ topicId: topic.id })">
+	    <img ng-src="{{ topic.user_avatar }}">
+	    <h2>{{ topic.user_name }}</h2>
+	    <p>{{ topic.created_time }}</p>
+	  </div>
+
+	  	<div class="item item-body item-image-video">
+		  	<div class="imageContainer" ng-hide="topic.pic_thumbnail === ''">
+		  		 <img class="full-image" ng-hide="topic.pic_thumbnail === ''" image-lazy-src="{{ topic.pic_thumbnail }}"
+		    image-lazy-loader="ripple">
+		  	</div>
+		   
+		  	<videogular ng-hide="topic.video === ''" 
+		  		vg-theme="config.theme">
+				<vg-media vg-src="[{src: topic.video, type:'video/mp4'}]">
+				</vg-media>
+	 
+				<vg-controls>
+					<vg-play-pause-button></vg-play-pause-button>
+					<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+					<vg-scrub-bar>
+						<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+					</vg-scrub-bar>
+					<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+					<vg-volume>
+						<vg-mute-button></vg-mute-button>
+						<vg-volume-bar></vg-volume-bar>
+					</vg-volume>
+					<vg-fullscreen-button></vg-fullscreen-button>
+				</vg-controls>
+	 
+				<vg-overlay-play></vg-overlay-play>
+				<vg-poster vg-url='topic.video_thumbnail'></vg-poster>
+			</videogular>
+
+	  	</div>
+	  	<div class="item row">
+			<div class="col" ng-click="beInspiredBy(topic.id)" ng-class="{ inspired:topic.inspiredBy }" id="{{ topic.id }}-inspire"><i class="icon ion-android-bulb comments"></i> <span class="comments-text" id="{{ topic.id }}-inspiredCount">{{ topic.inspires }}</span></div>
+			<div class="col" ui-sref="tab.comments({id: topic.id})"><i class="icon ion-chatbubbles comments"></i> <span class="comments-text">{{ topic.comments_ammount }}</span></div>
+		</div>
+	  	<div class="item item-body bodytext">
+	  		<h1 class="title">{{ topic.title | capitalize }}</h1>
+		    <h1 class="subtitle">{{ topic.category | capitalize }}</h1>
+		    <p> 
+		     {{ topic.summary | capitalize }}...
+		    </p>
+		    <p class="topic_tags"><a href="#/tab/tag_category/{{ tag.name }}" ng-repeat="tag in topic.tags">#{{ tag.name }}&nbsp;</a></p>
+	  	</div>
+	</div>
+
+	<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

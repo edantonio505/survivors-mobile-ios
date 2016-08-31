@@ -1,0 +1,20 @@
+<ion-view hide-nav-bar="true">
+	<ion-nav-bar class="bar-balanced">
+	</ion-nav-bar>
+	<ion-content class="loginContent">
+		<div class="list padding relogin_content">
+			<div class="first_image_container">
+				<img ng-src="{{ avatar }}">
+			</div>
+
+			<div class="text-center first_title">
+				<h3>{{ username }}</h3>
+			</div>
+
+			<button ng-click="relogin(email, password)" class="button button-block button-outline button-light" ng-disabled="!email || !password">Login again</button>
+			<div class="text-center question">
+				<a class="loginChoice" ng-click="login()">Login with a different account</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

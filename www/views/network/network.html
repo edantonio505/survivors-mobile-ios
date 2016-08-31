@@ -1,0 +1,10 @@
+<ion-view view-title="Connections" cache-view="true">
+	<ion-content>
+		<div class="list">
+		    <a class="item item-avatar" href="#/tab/connection_profile/{{ con.id }}" ng-repeat="con in connections track by con.name">
+		      <img ng-src="{{ con.avatar }}">
+		      <h2>{{ con.name }}</h2>
+		    </a>
+		</div>
+	</ion-content>
+</ion-view>

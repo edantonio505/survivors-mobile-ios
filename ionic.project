@@ -1,0 +1,19 @@
+{
+  "name": "SpeakOut",
+  "app_id": "196dfde6",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "14.42.334.0"
+    }
+  ]
+}

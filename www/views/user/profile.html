@@ -1,0 +1,41 @@
+<ion-view view-title="{{ user.name }}'s Profile" hide-tabs cache-view="false">
+		<ion-content lazy-scroll overflow-scroll='true'>
+		<i class="ion-android-more-vertical report-icon" ng-click="showMenu()"></i>
+		<div class="bc">
+			<div class="avatar row">
+				<div id="avatarContainer" class="avatarContainer col col-50" style="visibility: hidden;" class="avatarContainer">
+					<img image-lazy-src="{{ user.avatar }}">
+				</div>
+				<div class="otherContainer col col-50">
+					<span>{{ user.name }}</span><br />
+					<button ng-class="{AddConnectionDisabled: status == 'Waiting', AddConnectionDisabledConnected: status == 'Connected', AddConnectionDisabledAccept: status == 'Accept'}" ng-disabled="status == 'Waiting' || status == 'Connected'" ng-hide="user.email === AuthUserEmail" ng-click="addConnection(user.name)" class="addConnection"><i class="ion-ios-plus"></i> 
+					<span class="buttonText" ng-class="{connectedText: status == 'Connected'}">{{ status }}</span></button>
+				</div>
+			</div>
+		</div>
+		<div class="row profilePage">
+			<div class="col left">
+				<p class="text-center">Topics</p>
+				<h3 class="text-center">{{ user.topics_count }}</h3>
+			</div>
+			<div class="col">
+				<p class="text-center">Connections</p>
+				<h3 class="text-center">{{ user.connections_count }}</h3>
+			</div>
+			<div class="col right">
+				<p class="text-center">Inspired</p>
+				<h3 class="text-center">{{ user.inspired_count }}</h3>
+			</div>
+		</div>
+
+		<div class="row row-wrap topics">
+			<div  class="col col-25" ng-repeat="topic in user.topics" ng-click="checkTopic(topic.id)">
+				<div class="text_topic" ng-show="topic.pic_thumbnail == '' && topic.video == ''">
+					<i class="ion-android-list"></i>
+				</div>
+				<div ng-show="topic.pic_thumbnail != ''" image-lazy-src="{{ topic.pic_thumbnail }}" image-lazy-background-image="true" style="height: 100%; width: 100%; background-size: cover;"></div>
+				<div ng-show="topic.video_thumbnail != ''" image-lazy-src="{{ topic.video_thumbnail }}" image-lazy-background-image="true" style="height: 100%; width: 100%; background-size: cover;"></div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
