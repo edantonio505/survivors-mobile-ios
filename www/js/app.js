@@ -22,14 +22,14 @@ angular.module('starter', [
     }
   });
 })
-.constant('SNURL', 'http://52.87.187.229/api/v1/')
-.constant('SNSOCKET', 'http://52.87.187.229:6001')
+.constant('SNURL', 'http://52.23.198.162/api/v1/')
+.constant('SNSOCKET', 'http://52.23.198.162:6001')
 // .constant('SNURL', 'http://survivorsnetwork.dev/api/v1/')
 // .constant('SNSOCKET', 'http://survivorsnetwork.dev:6001')
 .config(function($sceDelegateProvider, $ionicConfigProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
-    'https://s3-us-west-2.amazonaws.com/edantonio505-survivors-network/**'
+    'https://s3-us-west-2.amazonaws.com/speakout-survivorsnetwork/**'
   ]);
   $ionicConfigProvider.scrolling.jsScrolling(false);
   $ionicConfigProvider.views.swipeBackEnabled(false);
